@@ -1,0 +1,14 @@
+<view class='container1'>
+ <input type="text" confirm-type="done" bindinput='input'  placeholder='{{title}}'/>
+ <button size="mini" bindtap='search'>搜索</button>
+ </view>
+ <view wx:for="{{list}}">
+      <navigator class="list" url='../show/show?id={{index}}'>
+        <view style='margin:0 15rpx'>{{item.title}}</view>
+        <view class='time'>
+          <view class='time2' style="margin-right:10rpx">来源：教务处</view>
+          <icon type='waiting' size='10' color='#1296db' class='time2'></icon>
+          <view class='time2'>{{item.date}}</view>
+        </view>
+      </navigator>
+</view>

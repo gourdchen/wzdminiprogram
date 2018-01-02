@@ -1,0 +1,137 @@
+
+/* content.wxss */
+
+.center{
+  text-align:center;
+}
+.body{
+  background-color: white;
+}
+.btn-search {
+  border-radius: 0px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  font-size: 13px;
+  font-family: "微软雅黑";
+  color:gray;
+  content: inherit;
+}
+.weui-cell__ft{
+  background-color: #1296db;
+}
+.input-search{
+  border-right: 0;
+  font-size: 14px;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  height: 33px;
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 450rpx;
+  background-color: white;
+
+}
+.search-cell {
+  margin-top: 15px;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  justify-content: center;
+  background-color: #1296db;
+}
+.main{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-around;
+  align-items:center;
+  background-color: white;
+}
+.motto {
+  height: 180rpx;
+  width: 110rpx;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+}
+image{
+   width: 80rpx;
+   height: 80rpx;
+   margin: 0px;
+}
+.top{
+  background:#1296db;
+  height:180rpx;
+  width:100%;
+}
+button::after{
+  width: 0;
+}
+.list {
+margin: 40rpx 30rpx;
+border-bottom: solid 1rpx gainsboro;
+position: relative;
+background-color: white;
+display: flex;
+align-items: center;
+flex-wrap: wrap;
+font-size: 35rpx;
+}
+.imgs 
+{
+  float: left;
+}
+.imgs image {
+  display: block;
+   width: 200rpx;
+   height: 200rpx;}
+.infos {float: left; width: 480rpx; height: 200rpx;padding: 20rpx 0 0 20rpx;}
+.title {font-size: 20px;}
+.date {font-size: 10px;color: #aaa; position: absolute;bottom: 0;}
+.loadMore {text-align: center; margin: 20rpx; color: #aaa; font-size: 16px;}
+
+.time{
+  font-size: 25rpx;
+  align-self: flex-end;
+  margin: 30rpx 15rpx;
+  color:gray;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  align-items: center;
+}
+.icon_title{
+  font-size: 30rpx;
+  color: gray;
+}
+.time2{
+  margin-right: 5rpx;
+}
+.temp{
+  height: 40rpx;
+  font-size: 20rpx;
+}
+.refresh{
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  right: 30rpx;
+  bottom: 20rpx;
+  height: 80rpx;
+  width: 80rpx;
+  border-radius: 50%;
+  opacity: 0.4;
+  background-color: black;
+}
+.refresh-icon{
+  height: 50rpx;
+  width: 50rpx;
+  position: fixed;
+  right: 45rpx;
+  bottom:35rpx;
+  padding: 0rpx;
+}

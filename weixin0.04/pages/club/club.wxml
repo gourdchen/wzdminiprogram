@@ -1,0 +1,124 @@
+<view class='body'>
+
+  <!--弹出窗口下方阴影-->
+  <view class='mask' wx:if="{{showmask}}"></view>
+  
+  
+  <!--弹出窗口界面-->
+  <view class='apply_info' wx:if="{{showmask}}">
+    <view>请输入您的学号、姓名和联系方式</view>
+    <view class='apply_input'>
+      <label>学号</label>
+      <input bindinput='input_apply_stu_id'></input>
+    </view>
+    <view class='apply_input'>
+      <label>姓名</label>
+      <input bindinput='input_apply_name'></input>
+    </view>
+    <view class='apply_input'>
+      <label>联系方式</label>
+      <input bindinput='input_apply_phone'></input>
+    </view>
+    <view class='button_area'>
+      <view bindtap='apply_send'>确定</view>
+      <view bindtap='apply_cancel'>取消</view>
+    </view>
+  </view>
+
+  <view class="page">
+
+    <!--顶部导航栏-->
+    <view class="swiper-tab">
+      <view class="tab-item {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">社团简介</view>
+      <view class="tab-item {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">活动及申请</view>
+      <view class="tab-item {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">{{tap4}}</view>
+    </view>
+    <!--内容主体-->
+    <swiper class="swiper" current="{{currentTab}}" duration="200" bindchange="swiperChange">
+      <!--第一页-->
+      <swiper-item>
+        <scroll-view>
+          <view class='info'>
+            <image src='{{logo}}' class='logo'></image>
+            <text>{{info}}</text>
+          </view>
+        </scroll-view>
+      </swiper-item>
+      <!--第2页-->
+      <swiper-item>
+        <scroll-view scroll-y>
+
+          <view class='act_container' wx:for="{{activity_list}}">
+            <view class='activity'>
+              <!--<image class='act_image' src='{{item.image}}'></image>-->
+              <view class='act_title'>{{item.act_name}}</view>
+              <view class='act_time'>
+                <image src='/image/time.png' class='icon'></image>
+                <view>{{item.start_time}}</view> 至
+                <view>{{item.end_time}}</view>
+              </view>
+              <view class='act_place'>
+                <image class='icon' src='/image/place.png'></image>
+                {{item.place}}
+              </view>
+              <view class='act_place'>
+                <image class='icon' src='/image/people.png'></image>
+                {{club_name}}
+              </view>
+            </view>
+            <view class='apply'>
+              <!--<picker mode ='date' bindchange='bindchange_date' value='{{date}}'>{{date}}</picker>-->
+              <view class='app_but' bindtap='bindtap_submit' id='{{index}}'>{{apply_act}}</view>
+            </view>
+          </view>
+        </scroll-view>
+      </swiper-item>
+      <!--第3页-->
+      <swiper-item>
+        <scroll-view scroll-y>
+          <view class='app_input'>
+            <label>学号：</label>
+            <input bindinput='input_id' value="{{club_user_info.stu_id}}" disabled='{{idi}}'></input>
+          </view>
+          <view class='app_input'>
+            <label>姓名：</label>
+            <input bindinput='input_name' value='{{club_user_info.name}}' type='{{show}}'></input>
+          </view>
+          <view class='app_input'>
+            <label>电话：</label>
+            <input bindinput='input_phone' value='{{club_user_info.phone}}' type='{{show}}'></input>
+          </view>
+          <view wx:if="{{!ismember}}" style='font-size:25rpx'>您还不是该协会会员，或未绑定微信账号</view>
+          <view class='join' wx:if="{{ismember}}">
+            <view class='app_input'>
+              <label>性别：</label>
+              <input bindinput='input_gender' value='{{club_user_info.gender}}' type='{{show}}'></input>
+            </view>
+            <view class='app_input'>
+              <label>籍贯：</label>
+              <input bindinput='input_home' value='{{club_user_info.home}}' type='{{show}}'></input>
+            </view>
+            <view class='app_input'>
+              <label>院系：</label>
+              <input bindinput='input_school' value='{{club_user_info.school}}' type='{{show}}'></input>
+            </view>
+            <view class='app_input'>
+              <label>班级：</label>
+              <input bindinput='input_class' value='{{club_user_info.class}}' type='{{show}}'></input>
+            </view>
+            <view class='app_input'>
+              <label>民族：</label>
+              <input bindinput='input_nation' value='{{club_user_info.nation}}' type='{{show}}'></input>
+            </view>
+            <view class='app_input'>
+              <label>出生年月：</label>
+              <picker mode="date" bindchange='bindchange_birth' style='color:green'>{{club_user_info.birth}}</picker>
+            </view>
+            <button bindtap='sign'>{{apply}}</button>
+          </view>
+          <button bindtap='getinfo' wx:if="{{!ismember}}">申请加入</button>
+        </scroll-view>
+      </swiper-item>
+    </swiper>
+  </view>
+</view>

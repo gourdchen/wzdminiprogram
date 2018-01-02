@@ -1,0 +1,98 @@
+/* pages/my_club/my_club.wxss */
+input{
+  width: 60%;
+  margin: 10rpx;
+  height: 60rpx;
+  border-bottom:  solid 1rpx #dbdbdb;
+  font-size: 30rpx;
+  color: gray;
+}
+.time{
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  font-size: 30rpx;
+  color: gray;
+  margin: 20rpx 10%;
+  width: 80%;
+  justify-content: flex-start;
+}
+picker{
+  color: green;
+  
+  border-bottom: solid 1rpx #dbdbdb;
+  margin: 10rpx 20rpx;
+}
+.title1{
+  margin: 30rpx;
+  margin-left: 20rpx;
+  font-size: 40rpx;
+}
+.title2{
+  margin: 20rpx;
+  margin-left: 60rpx;
+  font-size: 30rpx;
+}
+.act{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  position: relative;
+}
+.button{
+  display: flex;
+  border: solid 1rpx #dbdbdb;
+  background: #1296db;
+  border-radius: 30rpx;
+  width: 110rpx;
+  height: 60rpx;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 25rpx;
+  flex-wrap: nowrap;
+  flex-shrink: 1;
+  position: absolute;
+  right: 40rpx;
+}
+.icon2{
+  width:40rpx;
+  height: 40rpx;
+  position: absolute;
+  right: 40rpx;
+}
+.title{
+  position: relative;
+  padding: 20rpx;
+  border-bottom: solid 1rpx #dbdbdb;
+  
+  margin:0 20rpx ;
+  font-size: 35rpx;
+}
+.submit{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.submit_button{
+  width: 140rpx;
+  height: 60rpx;
+  color: white;
+  font-size: 25rpx;
+  padding: 0;
+  line-height: 25rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20rpx;
+}
+textarea{
+  border: solid #1296db 1rpx;
+  margin: 20rpx;
+  padding: 10rpx;
+  border-radius: 10rpx;
+  width: 690rpx;
+}
+.label_input{
+  display: flex;
+}

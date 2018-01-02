@@ -1,0 +1,16 @@
+<view>
+  <view style='font-size:50rpx;margin:20rpx;color:red'>{{content.title}}</view>
+  <view style='margin:20rpx'>
+    <text space='ensp'>{{content.content}}</text>
+  </view>
+</view>
+<view hidden='{{fj_display}}'>
+<view style='text-align:center;width:100%'>附件列表</view>
+<view wx:for="{{fj}}" class='fj'>
+  <view class='fj_name'>{{item.name}}</view>
+  <button bindtap='{{bind[index]}}' id ="{{index}}" class='fj_but'>{{down_open[index]}}
+  <progress percent="{{percent[index]}}" id="{{index}}" 
+   />
+  </button>
+</view>
+</view>

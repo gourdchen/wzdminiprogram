@@ -1,0 +1,63 @@
+.infomation{
+height: 610px;
+display: flex;
+flex-direction: column;
+background-color: whitesmoke;
+}
+
+.info-avatar{
+background-color: white;
+padding: 20rpx;
+border-bottom: solid 1rpx;
+border-bottom-color: whitesmoke;
+}
+.info-avatar-sun{
+width: 128rpx;
+height: 128rpx;
+float: right;
+}
+.info-nickname{
+background-color: white;
+padding: 20rpx;
+border-bottom: solid 1rpx;
+border-bottom-color: whitesmoke;
+}
+.info-nickname-sun{
+  color: #666;
+  float: right;
+}
+.info-name{
+background-color: white;
+padding: 20rpx;
+border-bottom: solid 1rpx;
+border-bottom-color: whitesmoke;
+}
+.info-sex{
+background-color: white;
+padding: 20rpx;
+border-bottom: solid 1rpx;
+border-bottom-color: whitesmoke;
+}
+.info-dep{
+background-color: white;
+padding: 20rpx;
+border-bottom: solid 1rpx;
+border-bottom-color: whitesmoke;
+}
+.info-num{
+background-color: white;
+padding: 20rpx;
+border-bottom: solid 1rpx;
+border-bottom-color: whitesmoke;
+}
+.info-label{
+  float: left;
+}
+.info-input{
+  float :right;
+ 
+}
+.info-input-sun{
+  text-align:right;
+
+}

@@ -1,0 +1,11 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="usermotto">
+    <navigator url="../content/content" >进入应用</navigator>
+   <!-- <button size="mini" type="primary" bindtap="bindViewTap">点击进入</button>-->
+  </view>
+  <view class="userinfo">
+ <!--   <image class="userinfo-avatar" src="E://fff.jpg" background-size="cover"></image>-->
+    <!--<text class="userinfo-nickname">{{userInfo.nickName}}</text>-->
+  </view>
+</view>

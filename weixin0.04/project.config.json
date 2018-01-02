@@ -1,0 +1,47 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.5.4",
+	"appid": "wx473c5476591040e2",
+	"projectname": "%E6%88%91%E7%9F%A5%E9%81%93%E7%BB%BC%E5%90%88%E4%BF%A1%E6%81%AF%E6%9C%8D%E5%8A%A1%E5%B9%B3%E5%8F%B0",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": 0,
+					"name": "club页",
+					"pathName": "pages/club/club",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "mt_club页",
+					"pathName": "pages/my_club/my_club",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "article",
+					"pathName": "pages/article/article",
+					"query": ""
+				}
+			]
+		}
+	}
+}

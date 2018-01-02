@@ -1,0 +1,31 @@
+/* pages/show/show.wxss */
+.main{
+  height: 490px;
+}
+.test{
+  border: 1rpx solid floralwhite;
+  margin-left:20rpx;
+  margin-right:20rpx;
+  height: 460px;
+  border-radius: 1%;
+  background-color: white;
+  margin-top: 10px;
+  box-shadow:0rpx rpx 0rpx 0rpx rebeccapurple inset;
+  color: gray;
+}
+.fj{
+  border: solid whitesmoke 2rpx;
+  margin: 10rpx;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.fj_name{
+  width: 510rpx;
+  margin: 30rprx;
+}
+.fj_but{
+  width: 150rpx;
+  margin: 30rpx;
+  font-size: 30rpx;
+}

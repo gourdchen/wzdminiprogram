@@ -1,0 +1,56 @@
+{
+  "pages": [
+    "pages/content/content",
+    "pages/logs/logs",
+    "pages/news/news",
+    "pages/show/show",
+    "pages/my/my",
+    "pages/search/search",
+    "pages/club_list/club_list",
+    "pages/ana/ana",
+    "pages/infomation/infomation",
+    "pages/club/club",
+    "pages/my_club/my_club",
+    "pages/apply_list/apply_list",
+    "pages/article/article"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#1296db",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "light"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#1296db",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/content/content",
+        "text": "通知",
+        "position": "top",
+        "iconPath": "/image/news.png",
+        "selectedIconPath": "/image/newst.png"
+      },
+      {
+        "pagePath": "pages/club_list/club_list",
+        "text": "社团",
+        "iconPath": "/image/club.png",
+        "selectedIconPath": "/image/club1.png"
+      },
+      {
+        "pagePath": "pages/ana/ana",
+        "text": "文章",
+        "iconPath": "/image/ana.png",
+        "selectedIconPath": "/image/ana1.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "/image/my.png",
+        "selectedIconPath": "/image/myt.png"
+      }
+    ]
+  }
+}

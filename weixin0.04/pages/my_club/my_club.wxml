@@ -1,0 +1,43 @@
+<view class='page'>
+  <view class='title1'>社团简介</view>
+  <textarea value='测试工作。注意注意'></textarea>
+  <button class="submit_button" style='background:green'>修改简介</button>
+  <view class='act'>
+    <view class='title1'>社团活动列表</view>
+    <view class='button' bindtap='newact'>发起活动</view>
+  </view>
+  <view wx:for="{{act_list}}">
+    <view class='title' bindtap='display' id='{{index}}'>{{index+1}}.{{item.act_name}}<image src='/image/jiantou.png' class='icon2'></image></view>
+    <view wx:if='{{item.display}}'>
+    <view class='label_input'>
+      <view class='title2'>活动名称</view>
+      <input value='{{item.act_name}}' id='{{index}}' bindinput='input_act_name'></input>
+      </view>
+      <view class='label_input'>
+      <view class='title2'>活动地点</view>
+      <input value='{{item.place}}' id='{{index}}' bindinput='input_act_place'></input>
+      </view>
+      <view class='title2'>活动时间</view>
+      <view class='time'>
+        开始时间：
+        <picker mode='date' id='{{index}}' bindchange='change_start_date'>{{item.start_date}}</picker>
+        <picker mode='time' id='{{index}}' bindchange='change_start_time'>{{item.start_time}}</picker>
+      </view>
+      <view class='time'>
+        结束时间：
+        <picker mode='date' id='{{index}}' bindchange='change_end_date'>{{item.end_date}}</picker>
+        <picker mode='time' id='{{index}}' bindchange='change_end_time'>{{item.end_time}}</picker>
+      </view>
+      <view class='time'>
+        报名截止：
+        <picker mode='date' id='{{index}}' bindchange='change_dead_date'>{{item.dead_date}}</picker>
+      </view>
+      <view class='submit'>
+      <button style='background:green' class='submit_button' bindtap='submit_button' wx:if='{{item.id==-1}}'>活动提交</button>
+      <button style='background:green' class='submit_button' bindtap='submit_button' wx:if='{{item.id!=-1}}'>内容更新</button>
+      <button style='background:red' class='submit_button'>删除活动</button>
+      <button style='background:#1296db' class='submit_button' bindtap='navigate'>申请列表</button>
+      </view>
+    </view>
+  </view>
+</view>

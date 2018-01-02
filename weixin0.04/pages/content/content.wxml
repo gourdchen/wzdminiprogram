@@ -1,0 +1,58 @@
+<scroll-view scroll-y="true" style="height: 610px;" bindscrolltolower='update' lower-threshold='10'>
+<view class='body'>
+  <view class="main">
+    <view class="top center">
+      <view style="size:20rpx;color:white;font-family:黑体">私人·数据助手</view>
+      <view class="search-cell">
+      <view class="weui-cell__bd">
+        <input class="input-search"  bindinput="bindKeyInput" placeholder="输入您想搜索的内容" placeholder-style=''/>
+      </view>
+      <view class="weui-cell__ft">
+        <button class="btn-search" bindtap='bindsearchTap'  >搜索</button>
+      </view>
+    </view>
+    </view>
+    <navigator open-type="navigate" url="../news/news" class="motto">
+      <image src="/image/icon/zs.png"></image>
+      <text class='icon_title'>证书</text>
+    </navigator>
+    <navigator open-type="navigate" url="../news/news" class="motto">
+      <image src="/image/icon/jw.png"></image>
+      <text class='icon_title'>教务</text>
+    </navigator>
+    <navigator open-type="navigate" url="../news/news" class="motto">
+      <image src="/image/icon/ks.png"></image>
+      <text class='icon_title'>考试</text>
+    </navigator>
+    <navigator open-type="navigate" url="../news/news" class="motto">
+      <image src="/image/icon/xw.png"></image>
+      <text class='icon_title'>新闻</text>
+    </navigator>
+    <navigator open-type="navigate" url="../news/news" class="motto">
+      <image src="/image/icon/sh.png"></image>
+      <text class='icon_title'>生活</text>
+    </navigator>
+    <navigator open-type="navigate" url="../news/news" class="motto">
+      <image src="/image/icon/wd.png"></image>
+      <text class='icon_title'>文档</text>
+    </navigator>
+  </view>
+  <!--循环输出列表 begin-->
+ 
+    <view wx:for="{{list}}" wx:key="id">
+      <navigator class="list" url='../show/show?id={{item.id}}'>
+        <view style='margin:0 15rpx'>{{item.title}}</view>
+        <view class='time'>
+          <view class='time2' style="margin-right:10rpx">来源：{{item.type}}</view>
+          <icon type='waiting' size='10' color='#1296db' class='time2'></icon>
+          <view class='time2'>{{item.date}}</view>
+        </view>
+      </navigator>
+    </view>
+   <view bindtap='refresh'  class='refresh' > 
+  <image src='/image/icon/firstrefresh.png' class='refresh-icon'></image>
+ </view>
+
+
+</view>
+</scroll-view>

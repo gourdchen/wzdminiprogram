@@ -1,0 +1,6 @@
+/* pages/article/article.wxss */
+canvas {
+    width: 100%;
+    height: 400px;
+   
+}

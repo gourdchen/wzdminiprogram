@@ -1,0 +1,6 @@
+
+<canvas canvas-id='pieCanvas'>
+</canvas>
+
+<canvas canvas-id='lineCanvas'></canvas>
+

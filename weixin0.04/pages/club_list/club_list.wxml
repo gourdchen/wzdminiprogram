@@ -1,0 +1,25 @@
+<!--look/look.wxml-->
+<view class='find'>
+  <template name="find">
+    <view class='find-block'>
+      <image src='{{address}}' class='find-image' bindtap='navigate'></image>
+      <view class='find-textarea'>
+        <view class='find-text-title'>
+          {{title}}
+        </view>
+        <view class='find-text-cont'>
+          {{cont}}
+        </view>
+        <view class='image-word'>
+          {{word}}
+        </view>
+        <view class='image-price'>
+          {{price}}
+        </view>
+      </view>
+    </view>
+  </template>
+  <block wx:for="{{findlist}}">
+    <template is="find" data="{{...item}}" />
+  </block>
+</view>

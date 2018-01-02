@@ -1,0 +1,42 @@
+<view class='infomation'>
+
+<view class='info-avatar'>
+<text class='info-label'>
+头像
+</text>
+ <view  bindtap="bindViewTap" >
+<image class="info-avatar-sun" src="{{userInfo.avatarUrl}}" background-size="cover"></image> 
+</view>
+</view>
+
+
+<view class='info-nickname'>
+<text class='info-label'> 昵称</text>
+ <text class="info-nickname-sun">{{userInfo.nickName}}</text> 
+</view >
+<view class='info-name'>
+<text class='info-label'> 姓名</text> 
+<view class='info-input'>
+<input class='info-input-sun' ></input>
+</view>
+</view>
+
+<view class='info-sex'>
+<text class='info-label'>性别</text>
+<view class='info-input'>
+<input class='info-input-sun' cursor='80'></input>
+</view>
+</view>
+<view class='info-dep' >
+<text class='info-label'>院系</text>
+<view class='info-input'>
+<input class='info-input-sun' cursor='80'></input>
+</view>
+</view>
+<view class='info-num' >
+<text class='info-label'>电话号码</text>
+<view class='info-input'>
+<input class='info-input-sun' cursor='80'></input>
+</view>
+</view>
+</view>

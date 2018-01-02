@@ -1,0 +1,21 @@
+/* news.wxss */
+.main{
+  height: 490px;
+}
+.test{
+  background-color: white;
+  border: 1rpx solid #F7F7F7;
+  margin-left:15rpx;
+  margin-right:15rpx;
+  height: 100px;
+  border-radius: 3%;
+  box-shadow:0rpx 0rpx 5rpx 5rpx #F7F7F7;
+  padding: 10rpx;
+  margin-top: 10px;
+  text-align: center;
+  display: flex;
+  align-items:flex-end;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+

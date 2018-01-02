@@ -1,0 +1,6 @@
+<view wx:for="{{list}}">
+      <navigator class="test" url='../show/show?id={{index}}'>
+      <view style="font-size:1.2em; color: red;flex-shrink:1">{{item.title}}</view>
+      <view style="font-size:0.7em; color: gray;flex-shrink:1">{{item.author}}</view>
+      </navigator>
+</view>

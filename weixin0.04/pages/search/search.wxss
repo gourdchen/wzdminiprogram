@@ -1,0 +1,64 @@
+/* search.wxss */
+input{
+  border: 1px solid silver;
+  width: 400rpx;
+  background-color: whitesmoke;
+  margin-left: 70rpx;
+}
+button{
+  margin: 0;
+  padding: 0;
+  margin-right: 70rpx;
+}
+.container1{
+  display: flex;
+  height: 100rpx;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #1296db;
+}
+.list {
+margin: 40rpx 30rpx;
+border-bottom: solid 1rpx gainsboro;
+position: relative;
+background-color: white;
+display: flex;
+align-items: center;
+flex-wrap: wrap;
+font-size: 35rpx;
+}
+.imgs 
+{
+  float: left;
+}
+.imgs image {
+  display: block;
+   width: 200rpx;
+   height: 200rpx;}
+.infos {float: left; width: 480rpx; height: 200rpx;padding: 20rpx 0 0 20rpx;}
+.title {font-size: 20px;}
+.date {font-size: 10px;color: #aaa; position: absolute;bottom: 0;}
+.loadMore {text-align: center; margin: 20rpx; color: #aaa; font-size: 16px;}
+
+.time{
+  font-size: 25rpx;
+  align-self: flex-end;
+  margin: 30rpx 15rpx;
+  color:gray;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  align-items: center;
+}
+.icon_title{
+  font-size: 30rpx;
+  color: gray;
+}
+.time2{
+  margin-right: 5rpx;
+}
+.temp{
+  height: 40rpx;
+  font-size: 20rpx;
+}

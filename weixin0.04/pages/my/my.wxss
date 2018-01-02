@@ -1,0 +1,84 @@
+/* my.wxss */
+.my-info{
+  height :100%;
+  display: flex;
+  flex-direction: column;
+   background-color: whitesmoke;
+   
+
+}
+.my-frame{
+  background-color:white;
+  flex-grow: 0;
+  }
+.my-list{
+  display:block;
+  height: 25px;
+  background-color:white;
+  padding:20rpx;
+  border-bottom:solid 1rpx;
+  border-bottom-color:whitesmoke;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.my-icon{
+  float: left;
+  height: 45rpx;
+  width: 45rpx;
+}
+.my-img{
+height: 200px;
+display: flex;
+}
+
+.my-choice{
+font-family: 楷体;
+font-size: 15px;
+
+}
+
+.userinfo {  
+  display: flex;  
+  flex-direction: column;
+  align-items: center;  
+  
+ 
+}  
+  
+.userinfo-avatar {  
+ 
+  width: 128rpx;  
+  height: 128rpx;  
+  margin: 20rpx;  
+  border-radius: 50%; 
+ 
+}  
+  
+.userinfo-nickname {  
+  
+  color: #aaa; 
+  float: bottom ; 
+}  
+.head-image-name{
+   position: absolute;
+   top: 60rpx;
+   left: 250rpx;
+   width: 250rpx;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+}
+.my-background{
+  height: 180px;
+}
+.my-page-bottom{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: whitesmoke;
+}
+
+
+

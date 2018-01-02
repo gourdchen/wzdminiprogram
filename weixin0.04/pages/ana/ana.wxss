@@ -1,0 +1,56 @@
+/* look/look.wxss */
+.find-block{
+position: relative;
+background-color:white;
+display: flex;
+flex-wrap: wrap;
+margin: 40rpx 50rpx;
+width: 650rpx;
+justify-content: center;
+box-shadow:  0px -1px 3px 0px whitesmoke,
+             -1rpx 0px 3px 0px whitesmoke,   /*左边阴影 */
+             1rpx 0px 3px 0px  whitesmoke,    /*右边阴影 */
+             0rpx 1rpx 3px 0px whitesmoke;
+border-radius: 10rpx;
+}
+.find-image{
+width: 650rpx;
+height:300rpx;
+padding: 0;
+margin: 0;
+border-top-left-radius: 10rpx;
+border-top-right-radius: 10rpx;
+}
+.find-textarea{
+height:40px ;
+width: 650rpx;
+padding-top: 0;
+background-color: white;
+border-bottom-left-radius: 10rpx;
+border-bottom-right-radius: 10rpx;
+display: flex;
+align-items: center;
+}
+.find-text-title{
+font-size: 30rpx;
+margin-left: 30rpx;
+}
+.find-text-cont{
+  font-size: 15rpx;
+  color: #c0c0c0;
+}
+.image-word{
+  font-family: "楷体";
+  font-size: 25rpx;
+  color: white;
+  position: absolute;
+  bottom: 60px;
+  left: 10px;
+}
+.image-price{
+  font-size: 20px;
+  color: #FFD700;
+  position: absolute;
+  bottom: 60px;
+  right: 15px;
+}

@@ -1,0 +1,25 @@
+.table{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 20rpx;
+}
+.tr{
+  width: 100%;
+  padding: 20rpx;
+  display: flex;
+  align-items: center;
+}
+.td{
+  flex-grow: 1;
+  height: 50rpx;
+  padding: 5rpx;
+  font-size: 30rpx;
+  color: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.td1{
+  width: 30%;
+}

@@ -1,0 +1,58 @@
+<view class='my-info'>
+
+
+  <view bindtap="bindViewTap" class="userinfo" style="">
+    <image class="my-background" src='/image/icon/haiyang2.jpg' style='width:100%'></image>
+    <view class='head-image-name'>
+      <navigator open-type='navigate' url="../infomation/infomation">
+        <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      </navigator>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </view>
+  </view>
+  <view class='my-page-bottom'>
+    <view class='my-frame' style='margin-bottom:5%'>
+      <navigator open-type="navigate" url="../news/news" class="my-list" style='border:solid 0px;'>
+        <image class='my-icon' src="/image/icon/tixing.png"></image>
+        <text class='my-choice'>我的提醒</text>
+      </navigator>
+    </view>
+
+    <view class='my-frame'>
+      <navigator open-type="navigate" url="../news/news" class="my-list">
+        <image class='my-icon' src="/image/icon/zuji.png"></image>
+        <text class='my-choice'>我的足迹</text>
+        <hr />
+      </navigator>
+    </view>
+    <view class='my-frame'>
+      <navigator open-type="navigate" url="../my_club/my_club" class="my-list">
+        <image class='my-icon' src="/image/icon/xing.png"></image>
+        <text class='my-choice'>社团管理</text>
+        <hr />
+      </navigator>
+    </view>
+    <view class='my-frame' style='margin-bottom:5%'>
+      <navigator open-type="navigate" url="../news/news" class="my-list">
+        <image class='my-icon' src="/image/icon/biji2.png"></image>
+        <text class='my-choice'>我的笔记</text>
+        <hr />
+      </navigator>
+    </view>
+
+    <view class='my-frame'>
+      <navigator open-type="navigate" url="../news/news" class="my-list">
+        <image class='my-icon' src="/image/icon/kefu.png"></image>
+        <text class='my-choice'>我的客服</text>
+      </navigator>
+    </view>
+
+
+    <view class='my-frame'>
+      <navigator open-type="navigate" url="../news/news" class="my-list" style='border:solid 0px'>
+        <image class='my-icon' src="/image/icon/settings.png"></image>
+        <text class='my-choice'>设置</text>
+      </navigator>
+    </view>
+  </view>
+</view>
