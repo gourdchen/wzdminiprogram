@@ -47,9 +47,9 @@ Page({
       method:'GET',
       success: function (res) {
         console.log(res);
-        app.index = res.data;
+        app.index = res.data.data;
         that.setData({
-          list: res.data
+          list: res.data.data
         })
         wx.hideLoading();
       }
@@ -74,7 +74,7 @@ Page({
        url: app.tz_list_url+'&page=' + app.no,
        success: function (res) {
          console.log(res);
-         app.index =app.index.concat( res.data);
+         app.index =app.index.concat(res.data.data);
          that.setData({
            list: app.index
          })

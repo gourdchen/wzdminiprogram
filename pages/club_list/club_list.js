@@ -6,15 +6,19 @@ Page({
    * 页面的初始数据
    */
   data: {
+    address: '/image/chexie.jpg',
     findlist: [
-      { id: 1, address: '/image/chexie.jpg', title: '征途自行车协会相关公示和申请', word: '', price: '', cont: '' }
+      { id: 1, title: '征途自行车协会相关公示和申请', word: '', price: '', cont: '' }
     ]
 
    
   },
-navigate:function(){
+navigate:function(e){
+  var that = this
+  console.log(e)
+  app.club_list=that.data.club_list
   wx.navigateTo({
-    url: '/pages/club/club',
+    url: '/pages/club/club?club_index='+e.target.id,
   })
 },
   /**
@@ -25,9 +29,33 @@ navigate:function(){
       //调用应用实例的方法获取全局数据  
       app.checkstate();
       this.data.type=options.type;
+      wx.request({
+        url: app.get_club_list,
+        success(res){
+          that.setData({
+            club_list:res.data.data
+          })
+        }
+      })
   }
   ,
-
+  onPullDownRefresh:function(){
+    console.log('下拉刷新')
+      this.setData(
+        {
+          club_list:[]
+        }
+      )
+      wx.request({
+        url: app.get_club_list,
+        success(res) {
+          that.setData({
+            club_list: res.data.data
+          })
+          wx.stopPullDownRefresh()
+        }
+      })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

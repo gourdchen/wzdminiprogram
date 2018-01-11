@@ -3,16 +3,26 @@
   margin-right: 10rpx;  
 }  
   
+.animation{
+  height:0px;
+  background:white;
+  overflow: hidden;
+  width: 100%;
+  z-index: 100;
+}
 .swiper-tab {  
   display: flex;  
   flex-direction: row;  
   line-height: 80rpx;  
-  border-bottom: 2rpx solid #777; 
-  
+  border-bottom: 1px solid #dbdbdb;  
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
 }  
   
 .tab-item {  
-  width: 33.3%;  
+  width: 25%;  
+  margin:0 1%; 
   text-align: center;  
   color: #777;  
   font-size: 30rpx;
@@ -111,7 +121,7 @@ picker{
   border-bottom: solid 1rpx #dbdbdb;
 }
 input{
-  width: 350rpx;
+  width: 550rpx;
   height: 40rpx;
   padding: 5rpx;
   font-size: 30rpx;
@@ -238,3 +248,30 @@ input{
   align-items: center;
 }
 
+.honor{
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+  margin: 50rpx 10rpx;
+}
+.honor-item{
+  width: 150rpx;
+  
+}
+.honor-img{
+  width: 100rpx;
+  height: 100rpx;
+  margin: 20rx;
+}
+.honor-font{
+  font-size: 25rpx;
+  color: gray;
+}
+.user_info_label{
+  font-size: 30rpx;
+  margin-right: 40rpx;
+}
+.button{
+  font-size: 30rpx;
+  margin: 20rpx 0;
+}

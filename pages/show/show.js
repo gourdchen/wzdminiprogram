@@ -27,25 +27,25 @@ Page({
     var that = this;
     //把文章id传入这个接口，以获取文章的内容、标题、时间
     wx.request({
-      url: app.articlecontent_url+'&id='+that.data.id,
+      url: app.articlecontent_url+'&tz_id='+that.data.id,
       success(res){
         that.setData({
-          content:res.data
+          content:res.data.data
         })
       }
     })
     //把文章id传入这个接口，返回附件的数组，每个数组包含 文件名和文件的链接
     wx.request({
-      url: app.articlefile_url+'&id=' + that.data.id,
+      url: app.articlefile_url+'&tz_id=' + that.data.id,
       success(res) {
         console.log(res)
         that.setData({
-          fj: res.data,//保存附件数组
-          percent:res.data,//创建附件数组长度的percent数组
-          path:res.data,//创建附件数组长度的path数组
+          fj: res.data.data,//保存附件数组
+          percent:res.data.data,//创建附件数组长度的percent数组
+          path:res.data.data,//创建附件数组长度的path数组
           fj_display:false//附件模块开启显示
         })
-        if(res.data[0].length==0){
+        if(res.data.data[0].length==0){
           that.setData({
             fj_display: true//附件模块开启显示
           })

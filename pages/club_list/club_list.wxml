@@ -1,11 +1,10 @@
 <!--look/look.wxml-->
 <view class='find'>
-  <template name="find">
-    <view class='find-block'>
-      <image src='{{address}}' class='find-image' bindtap='navigate'></image>
+    <view class='find-block' wx:for="{{club_list}}" >
+      <image src='/image/chexie.png' class='find-image' bindtap='navigate' id='{{index}}' ></image>
       <view class='find-textarea'>
         <view class='find-text-title'>
-          {{title}}
+          {{item.name}}
         </view>
         <view class='find-text-cont'>
           {{cont}}
@@ -18,8 +17,4 @@
         </view>
       </view>
     </view>
-  </template>
-  <block wx:for="{{findlist}}">
-    <template is="find" data="{{...item}}" />
-  </block>
 </view>

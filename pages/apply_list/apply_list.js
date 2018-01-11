@@ -1,21 +1,32 @@
 // pages/apply_list/apply_list.js
+var app=getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    apply_list:[{'name':'晓东','stu_id':'1234567890','phone':'0987654321'},
-      { 'name': '晓东', 'stu_id': '1234567890', 'phone': '0987654321' },
-      { 'name': '晓东', 'stu_id': '1234567890', 'phone': '0987654321' },
-      { 'name': '晓东', 'stu_id': '1234567890', 'phone': '0987654321' },]
+    apply_list:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var act_id=options.act_id
+    var that = this
+    wx.request({
+      url: app.get_act_join_user,
+      data:{
+        act_id:act_id
+      },
+      success(res){
+        console.log(res.data)
+        that.setData({
+          apply_list:res.data.data
+        })
+      }
+    })
   },
 
   /**

@@ -1,43 +1,121 @@
 <view class='page'>
-  <view class='title1'>社团简介</view>
-  <textarea value='测试工作。注意注意'></textarea>
-  <button class="submit_button" style='background:green'>修改简介</button>
-  <view class='act'>
-    <view class='title1'>社团活动列表</view>
-    <view class='button' bindtap='newact'>发起活动</view>
-  </view>
-  <view wx:for="{{act_list}}">
-    <view class='title' bindtap='display' id='{{index}}'>{{index+1}}.{{item.act_name}}<image src='/image/jiantou.png' class='icon2'></image></view>
-    <view wx:if='{{item.display}}'>
-    <view class='label_input'>
-      <view class='title2'>活动名称</view>
-      <input value='{{item.act_name}}' id='{{index}}' bindinput='input_act_name'></input>
-      </view>
-      <view class='label_input'>
-      <view class='title2'>活动地点</view>
-      <input value='{{item.place}}' id='{{index}}' bindinput='input_act_place'></input>
-      </view>
-      <view class='title2'>活动时间</view>
-      <view class='time'>
-        开始时间：
-        <picker mode='date' id='{{index}}' bindchange='change_start_date'>{{item.start_date}}</picker>
-        <picker mode='time' id='{{index}}' bindchange='change_start_time'>{{item.start_time}}</picker>
-      </view>
-      <view class='time'>
-        结束时间：
-        <picker mode='date' id='{{index}}' bindchange='change_end_date'>{{item.end_date}}</picker>
-        <picker mode='time' id='{{index}}' bindchange='change_end_time'>{{item.end_time}}</picker>
-      </view>
-      <view class='time'>
-        报名截止：
-        <picker mode='date' id='{{index}}' bindchange='change_dead_date'>{{item.dead_date}}</picker>
-      </view>
-      <view class='submit'>
-      <button style='background:green' class='submit_button' bindtap='submit_button' wx:if='{{item.id==-1}}'>活动提交</button>
-      <button style='background:green' class='submit_button' bindtap='submit_button' wx:if='{{item.id!=-1}}'>内容更新</button>
-      <button style='background:red' class='submit_button'>删除活动</button>
-      <button style='background:#1296db' class='submit_button' bindtap='navigate'>申请列表</button>
-      </view>
+  <!--底部导航栏-->
+  <view class="swiper-tab">
+    <view class="tab-item {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">
+      <icon type='info' size='20' color="{{currentTab==0 ? '#1296db' : '#dbdbdb'}}"></icon>
+      <view>社团简介</view>
+    </view>
+    <view class="tab-item" bindtap='add_act'>
+      <image src='/image/add.png' class='icon'></image>
+    </view>
+    <view class="tab-item {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">
+      <icon type='success' size='20' color="{{currentTab==1 ? '#1296db' : '#dbdbdb'}}"></icon>
+      <view>活动列表</view>
     </view>
   </view>
-</view>
+  <!--背景蒙层-->
+  <view class='mask' wx:if="{{showmask}}"></view>
+  <!--发起活动弹窗-->
+  <view wx:if='{{showmask}}' class='add_act'>
+    <view class='label_input'>
+      <view class='title2 w'>活动名称</view>
+      <input value='{{act_list[0].act_name}}' id='{{0}}' bindinput='input_act_name'></input>
+    </view>
+    <view class='label_input'>
+      <view class='title2 w'>活动地点</view>
+      <input value='{{act_list[0].place}}' id='{{0}}' bindinput='input_act_place'></input>
+    </view>
+    <view class='title2 w' style='width:100%'>活动内容介绍(100字以内)</view>
+    <textarea id='{{0}}' bindinput='input_act_content'>
+    </textarea>
+    <view class='time w'>
+      开始时间：
+      <picker mode='date' id='{{0}}' bindchange='change_start_date'>{{act_list[0].start_date}}</picker>
+      <picker mode='time' id='{{0}}' bindchange='change_start_time'>{{act_list[0].start_time}}</picker>
+    </view>
+    <view class='time w'>
+      结束时间：
+      <picker mode='date' id='{{0}}' bindchange='change_end_date'>{{act_list[0].end_date}}</picker>
+      <picker mode='time' id='{{0}}' bindchange='change_end_time'>{{act_list[0].end_time}}</picker>
+    </view>
+    <view class='time w'>
+      报名截止：
+      <picker mode='date' id='{{0}}' bindchange='change_dead_date'>{{act_list[0].dead_date}}</picker>
+    </view>
+    <view class='submit'>
+      <button style='background:green' class='submit_button' bindtap='submit_button'>活动提交</button>
+      <button style='background:green' class='submit_button' bindtap='cancel_button'>取消</button>
+    </view>
+  </view>
+    <!--多个社团同时管理的情况-->
+    <picker bindchange="bindPickerChange" value="{{index}}" range='{{club_list}}' range-key="{{'name'}}">
+      <view class="picker">
+        当前管理社团：{{club_list[club_index].name}}
+      </view>
+    </picker>
+    <!--第一页-->
+
+    <scroll-view scroll-y wx:if="{{currentTab==0}}">
+      <view class='remind'>您的社团管理账户名为admin,口令为{{thirdid}},据此登陆网页后台</view>
+      <view class='title1'>社团logo</view>
+      <view class='logo-area'>
+        <image class='logo' src="{{club_info.logo}}"></image>
+        <button class='logo-button' bindtap='change_logo'>更换logo</button>
+      </view>
+      <view class='title1'>社团简介</view>
+      <textarea value='{{club_info.info}}' wx:if="{{!showmask}}" bindinput='input_info'></textarea>
+      <button class="submit_button" style='background:green' bindtap='update_club_info'>修改简介</button>
+    </scroll-view>
+
+
+    <!--第二页-->
+
+
+    <scroll-view scroll-y wx:if="{{currentTab==1}}" style='margin-bottom:120rpx'>
+      <view class='act'>
+        <view class='title1'>社团活动列表</view>
+      </view>
+      <view wx:for="{{act_list}}">
+        <view class='title' bindtap='display' id='{{index}}'>{{item.act_name}}
+          <image src='/image/jiantou.png' class='icon2'></image>
+        </view>
+        <view wx:if='{{item.display}}'>
+          <view class='label_input'>
+            <view class='title2'>活动名称</view>
+            <input value='{{item.act_name}}' id='{{index}}' bindinput='input_act_name'></input>
+          </view>
+          <view class='label_input'>
+            <view class='title2'>活动地点</view>
+            <input value='{{item.place}}' id='{{index}}' bindinput='input_act_place'></input>
+          </view>
+
+          <view class='title2' style='width:100%'>活动内容介绍(100字以内)</view>
+          <textarea id='{{index}}' value='{{item.content}}'  bindinput='input_act_content' wx:if="{{!showmask && item.display}}">
+          </textarea>
+
+
+          <view class='title2'>活动时间</view>
+          <view class='time'>
+            开始时间：
+            <picker mode='date' id='{{index}}' bindchange='change_start_date'>{{item.start_date}}</picker>
+            <picker mode='time' id='{{index}}' bindchange='change_start_time'>{{item.start_time}}</picker>
+          </view>
+          <view class='time'>
+            结束时间：
+            <picker mode='date' id='{{index}}' bindchange='change_end_date'>{{item.end_date}}</picker>
+            <picker mode='time' id='{{index}}' bindchange='change_end_time'>{{item.end_time}}</picker>
+          </view>
+          <view class='time'>
+            报名截止：
+            <picker mode='date' id='{{index}}' bindchange='change_dead_date'>{{item.dead_date}}</picker>
+          </view>
+          <view class='submit'>
+            <button style='background:green' id='{{index}}' class='submit_button' bindtap='update' wx:if='{{item.id!=-1}}'>内容更新</button>
+            <button style='background:red' class='submit_button' bindtap='delete_act' id='{{index}}'>删除活动</button>
+            <button style='background:#1296db' class='submit_button' bindtap='navigate' id='{{index}}'>申请列表</button>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+
+  </view>

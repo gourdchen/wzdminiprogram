@@ -6,7 +6,7 @@
       <view class='td td1' >电话(点击拨打)</view>
     </view>
     <view class='tr' wx:for="{{apply_list}}">
-      <text class='td' selectable='true'>{{index+1}}.{{item.name}}</text>
+      <text class='td' selectable='true'>{{index+1}}.{{item.username}}</text>
       <text class='td' selectable='true'>{{item.stu_id}}</text>
       <text class='td' bindtap='phone' id='{{index}}' selectable='true'>{{item.phone}}</text>
     </view>
